@@ -1,0 +1,65 @@
+*{
+  margin: 0;
+}
+body{
+   background-image: linear-gradient(to right, rgb(102, 102, 102) , rgb(135, 190, 194));
+   margin-top: 50px;
+   margin-left: 30px;
+}
+a {  
+  color: rgb(92, 177, 216);
+  text-decoration: none;
+}
+  
+  #file-manager {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .file {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    position: relative;
+  }
+  
+  .file:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .dots-menu {
+    cursor: pointer;
+    margin-left: auto; /* Align dots to the right */
+  }
+  
+  .file-options {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 5px;
+    z-index: 1;
+  }
+  
+  .file:hover .file-options {
+    display: flex;
+  }
+  
+  .option {
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  .option:hover {
+    background-color: #f0f0f0;
+  }
+  

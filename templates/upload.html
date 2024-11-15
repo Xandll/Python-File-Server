@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>X-Cloud</title>
+  <link rel="icon" href="../static/logo.png">
+  <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+  <h2>Upload Files</h2>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="file" id="file" />
+      <br />
+      <input type="submit" value="Upload" name="submit" id="submit" />
+  </form>
+  <center><h2>Files</h2></center>
+
+  <div id="file-manager">
+    {% for file in files %}
+    <div class="file">
+      
+      <span>{{ file }}</span>
+      <div class="dots-menu">&#8230;</div>
+      <div class="file-options">
+        <div class="option"><a href="#" onclick="showRenameForm('{{ file }}')">Rename</a></div>
+        <div class="option"><a href="/delete/{{ file }}">Delete</a></div>
+        <div class="option"><a href="/download/{{ file }}">Download</a> </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  
+  <!-- Rename Form -->
+  <div id="rename-form" style="display: none;">
+    <form action="/rename" method="post">
+      <input type="hidden" name="old_filename" id="old_filename">
+      <input type="text" name="new_filename" placeholder="Enter new filename">
+      <input type="submit" value="Rename">
+    </form>
+  </div>
+
+  <button onclick="resetLogin()">Reset Login</button>
+
+  <script src="/static/js/script.js"></script>
+</body>
+</html>
